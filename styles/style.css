@@ -1,0 +1,26 @@
+#siteBanner {
+    position: absolute;
+    background: #293c66;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+  #viewDiv {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    height: calc(100% - 60px);
+    top: 60px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  #navMenu {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }

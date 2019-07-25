@@ -1,0 +1,15 @@
+{
+  "name": "BasicMapTemplateTS",
+  "version": "1.0.0",
+  "description": "A very basic template for creating web mapping applications with the ESRI Javascript API version 4.x",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/arcgis-js-api": "^4.12.0"
+  }
+}

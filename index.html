@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Map</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/css/main.css">
+  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+
+  <script>
+    var locationPath = location.pathname.replace(/\/[^\/]+$/, "");
+    window.dojoConfig = {
+      packages: [
+        {
+          name: "app",
+          location: locationPath + "/app"
+        }
+      ]
+    };
+  </script>
+  <script src="https://js.arcgis.com/4.12"></script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+</head>
+
+<body>
+    <div id="siteBanner">
+        <span id="siteLogo">
+            <img alt="Logo" src="" height="54">
+        </span>
+        <div id="navMenu">
+          <div id="searchWidgetContainer"></div>
+        </div>
+    </div>
+  <div id="viewDiv"></div>
+  <script>require(["app/MapCode"]);</script>
+</body>
+</html>
