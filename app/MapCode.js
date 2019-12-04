@@ -10,55 +10,61 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/widgets/Ho
     Expand_1 = __importDefault(Expand_1);
     Legend_1 = __importDefault(Legend_1);
     Search_1 = __importDefault(Search_1);
-    var map = new Map_1.default({
-        basemap: "topo",
-        layers: []
-    });
-    var view = new MapView_1.default({
-        container: "viewDiv",
-        map: map,
-        zoom: 10.00,
-        center: [-75.3, 38.7]
-    });
-    var homeBtn = new Home_1.default({
-        view: view
-    });
-    view.ui.add(homeBtn, {
-        position: "top-left",
-        index: 0
-    });
-    var legendExpand = new Expand_1.default({
-        view: view,
-        content: new Legend_1.default({
-            view: view,
-        }),
-        expandTooltip: "Expand Legend",
-        collapseTooltip: "Hide Legend"
-    });
-    view.ui.add(legendExpand, "top-left");
-    var searchWidget = new Search_1.default({
-        container: "searchWidgetContainer",
-        view: view,
-        maxSuggestions: 6,
-        locationEnabled: true,
-        sources: [] // Add additional search sources here, includes ESRI ArcGIS World Geocoding Service by default
-    });
-    var viewDiv = document.getElementById("viewDiv");
-    var searchExpand = document.getElementById("searchExpand");
-    searchExpand.addEventListener("click", toggleSearchExpand);
-    function toggleSearchExpand() {
-        var searchDiv = document.getElementById("searchWidgetContainer");
-        if (searchDiv.classList.contains("search-collapse")) {
-            searchDiv.classList.remove("search-collapse");
-            searchExpand.classList.add("search-collapse");
-            viewDiv.addEventListener("click", toggleSearchExpand);
+    var MainMap = /** @class */ (function () {
+        function MainMap() {
+            this.map = new Map_1.default({
+                basemap: "topo",
+                layers: []
+            });
+            this.view = new MapView_1.default({
+                container: "viewDiv",
+                map: this.map,
+                zoom: 4.00,
+                center: [-98, 38]
+            });
+            this.homeBtn = new Home_1.default({
+                view: this.view
+            });
+            this.view.ui.add(this.homeBtn, {
+                position: "top-left",
+                index: 0
+            });
+            this.legendExpand = new Expand_1.default({
+                view: this.view,
+                content: new Legend_1.default({
+                    view: this.view,
+                }),
+                expandTooltip: "Expand Legend",
+                collapseTooltip: "Hide Legend"
+            });
+            this.view.ui.add(this.legendExpand, "top-left");
+            this.searchWidget = new Search_1.default({
+                container: "searchWidgetContainer",
+                view: this.view,
+                maxSuggestions: 6,
+                locationEnabled: true,
+                sources: [] // Add additional search sources here, includes ESRI ArcGIS World Geocoding Service by default
+            });
+            this.viewDiv = document.getElementById("viewDiv");
+            this.searchExpand = document.getElementById("searchExpand");
+            this.searchExpand.addEventListener("click", this.toggleSearchExpand);
         }
-        else {
-            searchDiv.classList.add("search-collapse");
-            searchExpand.classList.remove("search-collapse");
-            viewDiv.removeEventListener("click", toggleSearchExpand);
-        }
-    }
-    ;
+        MainMap.prototype.toggleSearchExpand = function () {
+            var searchDiv = document.getElementById("searchWidgetContainer");
+            if (searchDiv.classList.contains("search-collapse")) {
+                searchDiv.classList.remove("search-collapse");
+                this.searchExpand.classList.add("search-collapse");
+                this.viewDiv.addEventListener("click", this.toggleSearchExpand);
+            }
+            else {
+                searchDiv.classList.add("search-collapse");
+                this.searchExpand.classList.remove("search-collapse");
+                this.viewDiv.removeEventListener("click", this.toggleSearchExpand);
+            }
+        };
+        ;
+        return MainMap;
+    }());
+    var map = new MainMap();
 });
 //# sourceMappingURL=MapCode.js.map
