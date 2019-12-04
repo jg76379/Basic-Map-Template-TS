@@ -1,26 +1,62 @@
+body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", "sans-serif";
+}
 #siteBanner {
-    position: absolute;
-    background: #293c66;
-    height: 60px;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 999;
+  position: absolute;
+  background: #0d61ae;
+  height: 75px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
   }
-  #viewDiv {
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    height: calc(100% - 60px);
-    top: 60px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-  }
-  #navMenu {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-  }
+#viewDiv {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  height: calc(100% - 75px);
+  top: 75px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+#navMenu {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+#searchExpand{
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  color: white;
+  background: #0d61ae;
+}
+#appTitle{
+  position: absolute;
+  left: 160px;
+  top: 19px;
+  color: white;
+  font-size: 27px;
+  font-weight: bold;
+}
+#siteLogo{
+  background-image: url("../images/logo.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 55px;
+  width: 105px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+.search-collapse{
+  visibility: hidden;
+}

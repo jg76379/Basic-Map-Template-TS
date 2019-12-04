@@ -43,3 +43,22 @@ var searchWidget = new Search({
   locationEnabled: true,
   sources: []  // Add additional search sources here, includes ESRI ArcGIS World Geocoding Service by default
 });
+
+
+const viewDiv = document.getElementById("viewDiv");
+const searchExpand = document.getElementById("searchExpand");
+searchExpand.addEventListener("click", toggleSearchExpand);
+
+function toggleSearchExpand(){
+  var searchDiv = document.getElementById("searchWidgetContainer");
+  if (searchDiv.classList.contains("search-collapse")){
+    searchDiv.classList.remove("search-collapse");
+    searchExpand.classList.add("search-collapse");
+    viewDiv.addEventListener("click", toggleSearchExpand)
+  }
+  else{
+    searchDiv.classList.add("search-collapse");
+    searchExpand.classList.remove("search-collapse");
+    viewDiv.removeEventListener("click", toggleSearchExpand)
+  }
+};

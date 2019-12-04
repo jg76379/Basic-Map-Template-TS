@@ -43,5 +43,22 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/widgets/Ho
         locationEnabled: true,
         sources: [] // Add additional search sources here, includes ESRI ArcGIS World Geocoding Service by default
     });
+    var viewDiv = document.getElementById("viewDiv");
+    var searchExpand = document.getElementById("searchExpand");
+    searchExpand.addEventListener("click", toggleSearchExpand);
+    function toggleSearchExpand() {
+        var searchDiv = document.getElementById("searchWidgetContainer");
+        if (searchDiv.classList.contains("search-collapse")) {
+            searchDiv.classList.remove("search-collapse");
+            searchExpand.classList.add("search-collapse");
+            viewDiv.addEventListener("click", toggleSearchExpand);
+        }
+        else {
+            searchDiv.classList.add("search-collapse");
+            searchExpand.classList.remove("search-collapse");
+            viewDiv.removeEventListener("click", toggleSearchExpand);
+        }
+    }
+    ;
 });
 //# sourceMappingURL=MapCode.js.map

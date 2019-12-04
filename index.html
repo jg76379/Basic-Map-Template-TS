@@ -5,7 +5,7 @@
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>Map</title>
 
-  <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/css/main.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/css/main.css">
   <link rel="stylesheet" type="text/css" href="./styles/style.css">
 
   <script>
@@ -19,7 +19,7 @@
       ]
     };
   </script>
-  <script src="https://js.arcgis.com/4.12"></script>
+  <script src="https://js.arcgis.com/4.13"></script>
 
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -29,11 +29,13 @@
 
 <body>
     <div id="siteBanner">
-        <span id="siteLogo">
-            <img alt="Logo" src="" height="54">
-        </span>
+        <span id="siteLogo"></span>
+        <div id="appTitle">
+          App Title
+        </div>
         <div id="navMenu">
-          <div id="searchWidgetContainer"></div>
+          <div id="searchExpand" class="esri-icon-search esri-widget--button" title="Search"></div>
+          <div id="searchWidgetContainer" class="search-collapse"></div>
         </div>
     </div>
   <div id="viewDiv"></div>
