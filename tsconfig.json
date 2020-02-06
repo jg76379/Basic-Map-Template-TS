@@ -9,10 +9,12 @@
       "target": "es5",
       "experimentalDecorators": true,
       "preserveConstEnums": true,
-      "suppressImplicitAnyIndexErrors": true
+      "suppressImplicitAnyIndexErrors": true,
+      "outDir": "./public/js"
     },
     "include": [
-      "./app/*"
+      "./src/*",
+      "./src/**/*"
     ],
     "exclude": [
       "node_modules"
