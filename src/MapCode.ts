@@ -74,4 +74,4 @@ class MainMap {
   };
 }
 
-const map = new MainMap();
+export default MainMap;
